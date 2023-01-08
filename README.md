@@ -21,6 +21,8 @@ Upon triggering a deployment, the CodePipeline pipeline will deploy 2 Endpoints 
 
 ![CodePipeline Deploy](./img/codepipeline-deploy-screenshot.jpg)
 
+![Staging endpoint](./img/staging-endpoint-screenshot.png)
+
 ### Project layout
 
 `buildspec.yml`
