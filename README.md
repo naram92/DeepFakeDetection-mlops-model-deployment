@@ -10,7 +10,7 @@ The overall architecture of the project is shown below:
 
 The architecture is divided into two main parts:
 
-* The first part involves processing data, training and testing models, and registering the models in the SageMaker Model Registry (as described in this in this [link](https://github.com/naram92/DeepFakeDetection-mlops-model-building)).
+* The first part involves processing data, training and testing models, and registering the models in the SageMaker Model Registry (as described in this [link](https://github.com/naram92/DeepFakeDetection-mlops-model-building)).
 * The second part involves automating the deployment of models from the SageMaker Model Registry to SageMaker endpoints for real-time inference. When a new model version is registered and approved, it initiates a deployment automatically (in this repository).
 
 ## MLOps for SageMaker Endpoint Deployment
