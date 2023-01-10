@@ -10,18 +10,18 @@ The overall architecture of the project is shown below:
 
 The architecture is divided into two main parts:
 
-* The first part involves processing data, training and testing models, and registering the models in the SageMaker Model Registry (in this [link](https://github.com/naram92/DeepFakeDetection-mlops-model-building)).
+* The first part involves processing data, training and testing models, and registering the models in the SageMaker Model Registry (as described in this in this [link](https://github.com/naram92/DeepFakeDetection-mlops-model-building)).
 * The second part involves automating the deployment of models from the SageMaker Model Registry to SageMaker endpoints for real-time inference. When a new model version is registered and approved, it initiates a deployment automatically (in this repository).
 
 ## MLOps for SageMaker Endpoint Deployment
 
-This code repository has the code to find the latest approved ModelPackage for the associated ModelPackageGroup and automaticaly deploy it to the Endpoint on detecting a change (`build.py`). This code repository also defines the CloudFormation template which defines the Endpoints as infrastructure. It also has configuration files associated with `staging` and `prod` stages. 
+This code repository contains the code to automatically locate and deploy the latest approved ModelPackage for the associated ModelPackageGroup to the Endpoint upon detecting a change (in `build.py`). The repository also includes a CloudFormation template defining the Endpoints as infrastructure, as well as configuration files for the `staging` and `prod` stages.
 
 Upon triggering a deployment, the CodePipeline pipeline will deploy 2 Endpoints - `staging` and `prod`. After the first deployment is completed, the CodePipeline waits for a manual approval step for promotion to the prod stage. We will need to go to CodePipeline AWS Managed Console to complete this step.
 
 ![CodePipeline Deploy](./img/codepipeline-deploy-screenshot.jpg)
 
-We can see on the figure below the model that is deployed in `staging`.
+The figure below shows the model that has been deployed to the `staging` environment.
 
 ![Staging endpoint](./img/staging-endpoint-screenshot.png)
 
